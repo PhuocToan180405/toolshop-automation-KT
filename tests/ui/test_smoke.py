@@ -37,8 +37,7 @@ def test_product_add_quantity_three_updates_cart_badge(page):
 @pytest.mark.ui
 def test_login_wrong_password_shows_error(page):
     """Goal: invalid credentials are rejected.
-    Precondition: an e-mail with no account. NEVER a shared account: Toolshop counts failed
-    logins (failed_login_attempts) and can lock it for the whole class.
+    Precondition: an email with no registered account.
     Expected: 'Invalid email or password' and the URL still ends with /auth/login."""
     login_page = LoginPage(page).open()
     login_page.login("nobody-here@example.com", "Wrong-Password-123")
