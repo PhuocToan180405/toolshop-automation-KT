@@ -1,3 +1,8 @@
+"""
+Goal: verify shopping cart line price and total calculations using BDD.
+Precondition: shopper is on the home page with an empty cart.
+Expected: each line price matches unit price times quantity, and cart total equals line price.
+"""
 import pytest
 from playwright.sync_api import expect
 from pytest_bdd import given, parsers, scenarios, then, when
