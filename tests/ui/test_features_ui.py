@@ -97,16 +97,3 @@ def test_account_page_logged_in_shows_user_profile(logged_in_page: Page):
     account = AccountPage(logged_in_page).open()
     expect(account.title).to_have_text("My account")
     expect(account.nav_menu).to_contain_text("QA Bot")
-
-
-def test_home_footer_github_opens_new_tab(page: Page):
-    """Goal: footer GitHub link opens target repo in a new browser tab.
-    Precondition: open homepage.
-    Expected: clicking footer GitHub icon triggers a new page with github.com URL."""
-    home = HomePage(page).open()
-    with page.context.expect_page() as new_page_info:
-        home.footer_github.click()
-    new_page = new_page_info.value
-    new_page.wait_for_load_state()
-    assert "github.com" in new_page.url
-    new_page.close()

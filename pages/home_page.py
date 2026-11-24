@@ -24,7 +24,6 @@ class HomePage(BasePage):
         self.sort_select = page.get_by_test_id("sort")
         self.sorting_completed = page.get_by_test_id("sorting_completed")
         self.product_prices = page.get_by_test_id("product-price")
-        self.footer_github = page.get_by_test_id("footer-learn-github")
         # TODO B2/B4 (later): price_slider_max = page.get_by_role("slider").nth(1)
 
     def open(self):
